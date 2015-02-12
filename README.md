@@ -1,7 +1,7 @@
-base-ubuntu-enhanced
-====================
+ubuntu-standard
+===============
 
-Building on ubuntu-core, with additional libraries supporting development:
+ubuntu-core, with added libraries
 
 * libsodium
 * zeromq
