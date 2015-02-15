@@ -7,11 +7,15 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0x77d026e2eead66bd 
     && echo 'deb http://ppa.launchpad.net/xuzhen666/dnscrypt/ubuntu trusty main' >> /etc/apt/sources.list \
     && echo 'deb-src http://ppa.launchpad.net/xuzhen666/dnscrypt/ubuntu trusty main' >> /etc/apt/sources.list \
     && apt-get update \
-    && apt-get -y install libsodium13 libsodium-dev
+    && apt-get -y install libsodium13 libsodium-dev \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # zeromq
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0xb9316a7bc7917b12 \
     && echo 'deb http://ppa.launchpad.net/chris-lea/zeromq/ubuntu trusty main' >> /etc/apt/sources.list \
     && echo 'deb-src http://ppa.launchpad.net/chris-lea/zeromq/ubuntu trusty main' >> /etc/apt/sources.list \
     && apt-get update \
-    && apt-get -y install libzmq3 libzmq3-dev
+    && apt-get -y install libzmq3 libzmq3-dev \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
